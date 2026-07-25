@@ -1,251 +1,397 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Perpustakaan Digital</title>
+<title>Perpustakaan Digital</title>
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* =========================
+   RESET
+========================= */
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f8fafc;
-            color: #172033;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* HEADER */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fa;
+    color: #111827;
+}
 
-        header {
-            background: white;
-            padding: 35px 20px 30px;
-            text-align: center;
-            border-bottom: 1px solid #e5e7eb;
-        }
 
-        .logo {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        header h1 {
-            font-size: 30px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
-        }
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        header p {
-            color: #64748b;
-            font-size: 15px;
-        }
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        /* LOGOUT */
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    background: #111827;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
 
-        .logout-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 9px 18px;
-            border: 1px solid #d1d5db;
-            background: white;
-            color: #475569;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: 0.2s;
-        }
+.brand-text h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
 
-        .logout-btn:hover {
-            background: #f1f5f9;
-        }
+.brand-text p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 3px;
+}
 
-        /* CONTENT */
+.logout-btn {
+    text-decoration: none;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 9px 17px;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: 0.2s;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+.logout-btn:hover {
+    background: #111827;
+    color: white;
+    border-color: #111827;
+}
 
-        .welcome {
-            text-align: center;
-            margin-bottom: 45px;
-        }
 
-        .welcome h2 {
-            font-size: 25px;
-            margin-bottom: 10px;
-        }
+/* =========================
+   HERO
+========================= */
 
-        .welcome p {
-            color: #64748b;
-            font-size: 15px;
-        }
+.hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 75px 25px 55px;
+    text-align: center;
+}
 
-        /* BOOK GRID */
+.hero-label {
+    display: inline-block;
+    background: #eef2ff;
+    color: #4f46e5;
+    padding: 7px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
 
-        .books {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
+.hero h2 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+    margin-bottom: 15px;
+}
 
-        /* BOOK CARD */
+.hero p {
+    max-width: 580px;
+    margin: 0 auto;
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.7;
+}
 
-        .book-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            overflow: hidden;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
 
-        .book-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.10);
-        }
+/* =========================
+   BOOK SECTION
+========================= */
 
-        /* COVER */
+.library {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px 80px;
+}
 
-        .book-cover {
-            width: 100%;
-            height: 300px;
-            background: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
 
-        .book-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
+.section-heading h3 {
+    font-size: 20px;
+}
 
-        /* BOOK INFO */
+.section-heading span {
+    font-size: 13px;
+    color: #9ca3af;
+}
 
-        .book-info {
-            padding: 22px 18px 20px;
-            text-align: center;
-        }
 
-        .book-info h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
+/* =========================
+   BOOK GRID
+========================= */
 
-        .book-info p {
-            color: #64748b;
-            font-size: 13px;
-            line-height: 1.6;
-            min-height: 42px;
-            margin-bottom: 18px;
-        }
+.books {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
 
-        /* READ BUTTON */
 
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 11px 15px;
-            background: #172033;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.2s;
-        }
+/* =========================
+   BOOK CARD
+========================= */
 
-        .btn:hover {
-            background: #334155;
-        }
+.book-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    min-height: 360px;
+    transition: 0.3s ease;
+}
 
-        /* FOOTER */
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
 
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            border-top: 1px solid #e5e7eb;
-            color: #94a3b8;
-            font-size: 13px;
-        }
 
-        /* TABLET */
+/* =========================
+   COVER
+========================= */
 
-        @media (max-width: 900px) {
+.book-cover {
+    width: 48%;
+    min-height: 360px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-            .books {
-                grid-template-columns: repeat(2, 1fr);
-            }
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
-        }
 
-        /* MOBILE */
+/* =========================
+   BOOK INFO
+========================= */
 
-        @media (max-width: 550px) {
+.book-info {
+    width: 52%;
+    padding: 32px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-            header {
-                padding: 30px 20px;
-            }
+.book-number {
+    font-size: 11px;
+    font-weight: bold;
+    color: #9ca3af;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
 
-            header h1 {
-                font-size: 25px;
-            }
+.book-info h3 {
+    font-size: 20px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
 
-            .container {
-                padding: 40px 15px;
-            }
+.book-info p {
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
 
-            .books {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
 
-            .book-cover {
-                height: 230px;
-            }
+/* =========================
+   READ BUTTON
+========================= */
 
-            .book-info {
-                padding: 16px 12px;
-            }
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
 
-            .book-info h3 {
-                font-size: 15px;
-            }
+.btn:hover {
+    background: #374151;
+}
 
-            .book-info p {
-                font-size: 12px;
-            }
 
-            .btn {
-                font-size: 12px;
-                padding: 10px 8px;
-            }
+/* =========================
+   FOOTER
+========================= */
 
-        }
+footer {
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    padding: 25px;
+    color: #9ca3af;
+    font-size: 12px;
+}
 
-    </style>
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .books {
+        grid-template-columns: 1fr;
+    }
+
+    .book-card {
+        min-height: 380px;
+    }
+
+    .book-cover {
+        min-height: 380px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 18px 20px;
+    }
+
+    .brand-text p {
+        display: none;
+    }
+
+    .brand-text h1 {
+        font-size: 16px;
+    }
+
+    .logout-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 20px 40px;
+    }
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .library {
+        padding: 0 15px 60px;
+    }
+
+    .section-heading h3 {
+        font-size: 18px;
+    }
+
+    .books {
+        gap: 20px;
+    }
+
+    .book-card {
+        display: block;
+        min-height: auto;
+    }
+
+    .book-cover {
+        width: 100%;
+        height: 360px;
+        min-height: 0;
+    }
+
+    .book-info {
+        width: 100%;
+        padding: 25px 22px;
+    }
+
+    .book-info h3 {
+        font-size: 19px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
-    <div class="logo">📚</div>
+    <div class="brand">
 
-    <h1>Perpustakaan Digital</h1>
+        <div class="brand-icon">
+            📚
+        </div>
 
-    <p>Koleksi e-book pilihan untuk ilmu, inspirasi dan perkembangan diri</p>
+        <div class="brand-text">
+
+            <h1>Perpustakaan Digital</h1>
+
+            <p>Koleksi ilmu dalam satu tempat</p>
+
+        </div>
+
+    </div>
+
 
     <a href="index.html" class="logout-btn">
         Keluar
@@ -254,13 +400,36 @@
 </header>
 
 
-<div class="container">
 
-    <div class="welcome">
+<!-- HERO -->
 
-        <h2>Koleksi E-Book</h2>
+<section class="hero">
 
-        <p>Pilih e-book yang ingin anda baca</p>
+    <div class="hero-label">
+        KOLEKSI DIGITAL
+    </div>
+
+    <h2>Temukan Ilmu Baru</h2>
+
+    <p>
+        Terokai koleksi e-book pilihan yang direka untuk
+        menambah ilmu, membina minda dan memberi inspirasi
+        kepada perjalanan anda.
+    </p>
+
+</section>
+
+
+
+<!-- LIBRARY -->
+
+<section class="library">
+
+    <div class="section-heading">
+
+        <h3>Koleksi E-Book</h3>
+
+        <span>4 e-book tersedia</span>
 
     </div>
 
@@ -274,32 +443,40 @@
 
             <div class="book-cover">
 
-                <img 
-                src="Blue%20and%20White%20Playful%20AI%20Digital%20Creator%20eBook%20Cover%20-%201.png" 
+                <img
+                src="Blue%20and%20White%20Playful%20AI%20Digital%20Creator%20eBook%20Cover%20-%201.png"
                 alt="E-Book 1">
 
             </div>
 
+
             <div class="book-info">
 
-                <h3>Rahsia Menghasilkan Wang Dari Produk Digital</h3>
+                <div class="book-number">
+                    E-BOOK 01
+                </div>
+
+                <h3>
+                    RAHSIA MENGHASILKAN WANG DARI PRODUK DIGITAL
+                </h3>
 
                 <p>
-                    Panduan Lengkap untuk Pemula
+                    Panduan Lengkap Untuk Pemula
                 </p>
 
-                <a 
-                href="https://online.fliphtml5.com/ajadz/xkzm/" 
-                class="btn" 
+                <a
+                href="https://online.fliphtml5.com/ajadz/xkzm/"
+                class="btn"
                 target="_blank">
 
-                    Baca Sekarang
+                    Baca Sekarang →
 
                 </a>
 
             </div>
 
         </div>
+
 
 
         <!-- E-BOOK 2 -->
@@ -308,32 +485,40 @@
 
             <div class="book-cover">
 
-                <img 
-                src="Red%20Minimal%20Money%20Guide%20E-Book%20Cover%20-%201.png" 
+                <img
+                src="Red%20Minimal%20Money%20Guide%20E-Book%20Cover%20-%201.png"
                 alt="E-Book 2">
 
             </div>
 
+
             <div class="book-info">
 
-                <h3>PERSONAL BRANDING DARI ZERO KE HERO</h3>
+                <div class="book-number">
+                    E-BOOK 02
+                </div>
+
+                <h3>
+                    PERSONAL BRANDING DARI ZERO KE HERO
+                </h3>
 
                 <p>
-                    Panduan Lengkap Membina Nama, Kepercayaan dan Pengaruh di Era Digital
+                    Panduan Lengkap Membina Nama, Kepercayaan Dan Pengaruh Di Era Digital
                 </p>
 
-                <a 
-                href="https://online.fliphtml5.com/ajadz/qwxn/" 
-                class="btn" 
+                <a
+                href="https://online.fliphtml5.com/ajadz/qwxn/"
+                class="btn"
                 target="_blank">
 
-                    Baca Sekarang
+                    Baca Sekarang →
 
                 </a>
 
             </div>
 
         </div>
+
 
 
         <!-- E-BOOK 3 -->
@@ -342,26 +527,33 @@
 
             <div class="book-cover">
 
-                <img 
-                src="ebook3.png" 
+                <img
+                src="ebook3.png"
                 alt="E-Book 3">
 
             </div>
 
+
             <div class="book-info">
 
-                <h3>MINDSET ORANG BERJAYA</h3>
+                <div class="book-number">
+                    E-BOOK 03
+                </div>
+
+                <h3>
+                    MINDSET ORANG BERJAYA
+                </h3>
 
                 <p>
-                    Cara Berfikir yang Mengubah Kehidupan
+                    Cara Berfikir Yang Mengubah Kehidupan
                 </p>
 
-                <a 
-                href="https://online.fliphtml5.com/ajadz/xqgn/" 
-                class="btn" 
+                <a
+                href="https://online.fliphtml5.com/ajadz/xqgn/"
+                class="btn"
                 target="_blank">
 
-                    Baca Sekarang
+                    Baca Sekarang →
 
                 </a>
 
@@ -370,32 +562,40 @@
         </div>
 
 
+
         <!-- E-BOOK 4 -->
 
         <div class="book-card">
 
             <div class="book-cover">
 
-                <img 
-                src="Black%20and%20Yellow%20Bold%20Motivational%20Wattpad%20Book%20Cover%20-%201.png" 
+                <img
+                src="Black%20and%20Yellow%20Bold%20Motivational%20Wattpad%20Book%20Cover%20-%201.png"
                 alt="E-Book 4">
 
             </div>
 
+
             <div class="book-info">
 
-                <h3>DISIPLIN: KUNCI UTAMA KEJAYAAN</h3>
+                <div class="book-number">
+                    E-BOOK 04
+                </div>
+
+                <h3>
+                    DISIPLIN: KUNCI UTAMA KEJAYAAN
+                </h3>
 
                 <p>
-                    Panduan Membina Disiplin Diri untuk Mencapai Impian dan Kejayaan
+                    Panduan Membina Disiplin Diri Untuk Mencapai Impian Dan Kejayaan
                 </p>
 
-                <a 
-                href="https://online.fliphtml5.com/ajadz/yppc/" 
-                class="btn" 
+                <a
+                href="https://online.fliphtml5.com/ajadz/yppc/"
+                class="btn"
                 target="_blank">
 
-                    Baca Sekarang
+                    Baca Sekarang →
 
                 </a>
 
@@ -406,12 +606,15 @@
 
     </div>
 
-</div>
+</section>
 
+
+
+<!-- FOOTER -->
 
 <footer>
 
-    © 2026 Perpustakaan Digital. Semua Hak Terpelihara.
+    © 2026 Perpustakaan Digital · Semua Hak Terpelihara
 
 </footer>
 
