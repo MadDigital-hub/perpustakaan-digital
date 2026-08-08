@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Perpustakaan Digital</title>
+<title>MadDigital Hub</title>
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -17,267 +14,272 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 
-    background: #071a33;
+    background: linear-gradient(
+        135deg,
+        #29458d 0%,
+        #1d3475 45%,
+        #0d1838 100%
+    );
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 20px;
+    padding: 25px;
 }
 
-
-/* KOTAK LOGIN */
-
-.login-box {
+/* KAD UTAMA */
+.login-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 655px;
 
-    background: white;
+    background: #ffffff;
 
-    padding: 45px 35px;
+    border-radius: 30px;
 
-    border-radius: 18px;
+    padding: 70px 65px 55px;
 
     text-align: center;
 
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.28);
 }
-
 
 /* LOGO */
-
 .logo {
-    width: 65px;
-    height: 65px;
+    width: 105px;
+    height: 105px;
 
-    margin: 0 auto 20px;
+    margin: 0 auto 35px;
 
-    background: #071a33;
-
-    border-radius: 16px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 30px;
+    object-fit: contain;
 }
 
-
 /* TAJUK */
-
 h1 {
     color: #111827;
 
-    font-size: 25px;
+    font-size: 46px;
+    font-weight: 700;
 
-    margin-bottom: 10px;
+    margin-bottom: 22px;
 }
 
-.subtitle {
+/* PENERANGAN */
+.description {
     color: #6b7280;
 
-    font-size: 14px;
+    font-size: 22px;
+    line-height: 1.55;
 
-    line-height: 1.6;
-
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 }
-
-
-/* LABEL */
-
-label {
-    display: block;
-
-    text-align: left;
-
-    color: #374151;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    margin-bottom: 8px;
-}
-
 
 /* PASSWORD */
-
-input {
+.password-input {
     width: 100%;
 
-    padding: 13px 15px;
+    height: 95px;
 
-    border: 1px solid #d1d5db;
+    padding: 0 28px;
 
-    border-radius: 9px;
+    border: 2px solid #dddddd;
 
-    font-size: 14px;
+    border-radius: 22px;
+
+    font-size: 21px;
+
+    color: #222;
 
     outline: none;
 
-    transition: 0.2s;
+    margin-bottom: 28px;
 }
 
-input:focus {
-    border-color: #071a33;
-
-    box-shadow: 0 0 0 3px rgba(7,26,51,0.1);
+.password-input::placeholder {
+    color: #b7b7b7;
 }
 
+.password-input:focus {
+    border-color: #2d66e8;
+}
 
-/* BUTTON */
-
-button {
+/* BUTANG */
+.login-button {
     width: 100%;
 
-    margin-top: 18px;
-
-    padding: 13px;
+    height: 95px;
 
     border: none;
 
-    border-radius: 9px;
+    border-radius: 22px;
 
-    background: #071a33;
+    background: #2d66e8;
 
     color: white;
 
-    font-size: 14px;
+    font-size: 27px;
 
-    font-weight: 600;
+    font-weight: bold;
 
     cursor: pointer;
 
     transition: 0.2s;
 }
 
-button:hover {
-    background: #102d52;
-
-    transform: translateY(-1px);
+.login-button:hover {
+    background: #2458cc;
 }
 
+.login-button:active {
+    transform: scale(0.99);
+}
 
 /* ERROR */
-
 #error {
     display: none;
 
     color: #dc2626;
 
-    font-size: 13px;
+    font-size: 15px;
 
-    margin-top: 15px;
+    margin-top: 18px;
 }
-
 
 /* FOOTER */
-
 .footer {
-    margin-top: 25px;
+    margin-top: 38px;
 
-    color: #9ca3af;
+    color: #a7adb8;
 
-    font-size: 11px;
+    font-size: 18px;
 }
 
 
-/* MOBILE */
+/* TELEFON */
+@media (max-width: 600px) {
 
-@media (max-width: 480px) {
+    body {
+        padding: 25px;
+    }
 
-    .login-box {
-        padding: 35px 25px;
+    .login-card {
+        padding: 65px 35px 45px;
+
+        border-radius: 28px;
+    }
+
+    .logo {
+        width: 90px;
+        height: 90px;
+
+        margin-bottom: 30px;
     }
 
     h1 {
-        font-size: 23px;
+        font-size: 34px;
+
+        margin-bottom: 18px;
     }
 
+    .description {
+        font-size: 18px;
+
+        line-height: 1.55;
+
+        margin-bottom: 35px;
+    }
+
+    .password-input {
+        height: 70px;
+
+        font-size: 17px;
+
+        border-radius: 17px;
+    }
+
+    .login-button {
+        height: 70px;
+
+        font-size: 21px;
+
+        border-radius: 17px;
+    }
+
+    .footer {
+        font-size: 15px;
+
+        margin-top: 30px;
+    }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
+<div class="login-card">
 
-<div class="login-box">
+    <!-- LOGO -->
+    <img
+        src="logo.png"
+        alt="MadDigital Hub"
+        class="logo"
+    >
 
-
-    <div class="logo">
-        📚
-    </div>
-
-
+    <!-- TAJUK -->
     <h1>
-        Perpustakaan Digital
+        MadDigital Hub
     </h1>
 
-
-    <p class="subtitle">
-        Masukkan kata laluan untuk mengakses
-        koleksi e-book digital kami.
+    <!-- PENERANGAN -->
+    <p class="description">
+        Akses eksklusif kepada koleksi e-book
+        premium untuk belajar, jana pendapatan
+        dan bina jenama digital anda
     </p>
 
+    <!-- PASSWORD -->
+    <input
+        type="password"
+        id="password"
+        class="password-input"
+        placeholder="Masukkan kata laluan"
+        autocomplete="off"
+    >
 
-    <form onsubmit="checkPassword(event)">
+    <!-- BUTANG -->
+    <button
+        class="login-button"
+        onclick="checkPassword()"
+    >
+        MASUK
+    </button>
 
-        <label for="password">
-            Kata Laluan
-        </label>
-
-
-        <input
-            type="password"
-            id="password"
-            placeholder="Masukkan kata laluan"
-            autocomplete="off"
-            required
-        >
-
-
-        <button type="submit">
-            Masuk
-        </button>
-
-
-    </form>
-
-
+    <!-- ERROR -->
     <p id="error">
-        Kata laluan tidak betul. Sila cuba lagi.
+        Kata laluan tidak betul.
     </p>
 
-
+    <!-- FOOTER -->
     <div class="footer">
-        © 2026 Perpustakaan Digital
+        © 2026 MadDigital Hub
     </div>
-
 
 </div>
 
 
 <script>
 
-function checkPassword(event) {
-
-    event.preventDefault();
+function checkPassword() {
 
     const password =
         document.getElementById("password").value;
 
     const error =
         document.getElementById("error");
-
 
     if (password === "MadDigital2026") {
 
@@ -290,11 +292,9 @@ function checkPassword(event) {
         document.getElementById("password").value = "";
 
     }
-
 }
 
 </script>
-
 
 </body>
 </html>
